@@ -5,10 +5,6 @@ import { OtelLogger } from './common/open-telemetry/logs/logger';
 import { registerInstrumentations } from '@opentelemetry/instrumentation';
 import { HttpInstrumentation } from '@opentelemetry/instrumentation-http';
 import {
-  ExpressInstrumentation,
-  ExpressLayerType,
-} from '@opentelemetry/instrumentation-express';
-import {
   BatchLogRecordProcessor,
   LoggerProvider,
 } from '@opentelemetry/sdk-logs';
@@ -21,7 +17,20 @@ import {
 import { GatewaySpanExporter } from './common/open-telemetry/traces/exporter';
 import { ClientRequest, IncomingMessage, ServerResponse } from 'http';
 
-async function bootstrap() {
+/*************  ✨ Codeium Command ⭐  *************/
+/**
+ * Initializes tracing and bootstraps the Nest.js application.
+ *
+ * @remarks
+ * Performs the following steps:
+ * 1. Initializes tracing.
+ * 2. Creates a new Nest.js application with the {@link AppModule}.
+ * 3. Configures the logger to use the {@link OtelLogger}.
+ * 4. Sets the global prefix for the application.
+ * 5. Listens on the specified port.
+ * 6. Logs a message to the console indicating the application is running.
+ */
+/******  91b51717-d546-499d-b448-d715f0a013ea  *******/async function bootstrap() {
   initializeTracing();
   const appWithLogger = await NestFactory.create(AppModule, {
     logger: new OtelLogger(createLoggerProvider().getLogger('gateway-api')),
