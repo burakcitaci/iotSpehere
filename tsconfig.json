@@ -8,6 +8,9 @@
     },
     {
       "path": "./apps/frontend/monitor"
+    },
+    {
+      "path": "./apps/backend/gateway"
     }
   ]
 }
