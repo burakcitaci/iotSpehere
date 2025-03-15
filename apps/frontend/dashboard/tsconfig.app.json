@@ -29,7 +29,10 @@
     "vite.config.ts",
     "vite.config.mts",
     "vitest.config.ts",
-    "vitest.config.mts"
+    "vitest.config.mts",
+    "eslint.config.js",
+    "eslint.config.cjs",
+    "eslint.config.mjs"
   ],
   "include": ["src/**/*.js", "src/**/*.jsx", "src/**/*.ts", "src/**/*.tsx"]
 }

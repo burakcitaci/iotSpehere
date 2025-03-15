@@ -4,13 +4,10 @@
   "files": [],
   "references": [
     {
-      "path": "./apps/frontend/monitor-e2e"
-    },
-    {
-      "path": "./apps/frontend/monitor"
-    },
-    {
       "path": "./apps/backend/gateway"
+    },
+    {
+      "path": "./apps/frontend/dashboard"
     }
   ]
 }
