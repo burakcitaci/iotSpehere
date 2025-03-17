@@ -29,7 +29,7 @@ export default defineConfig(() => ({
   },
   resolve: {
     alias: {
-      '@iotsphere/ui': path.resolve(__dirname, '../library/src/'),
+      '@iotsphere/ui-lib': path.resolve(__dirname, '../library/src/'),
     },
   },
   test: {
