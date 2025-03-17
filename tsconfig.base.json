@@ -18,7 +18,7 @@
     "target": "es2022",
     "baseUrl": ".",
     "paths": {
-      "@iotsphere/ui": ["apps/frontend/library/src/index.ts"]
+      "@iotsphere/ui-lib/*": ["apps/frontend/library/src/*"]
     }
   }
 }

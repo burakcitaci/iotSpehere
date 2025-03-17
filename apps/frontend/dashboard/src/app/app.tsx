@@ -1,9 +1,9 @@
-import NxWelcome from './nx-welcome';
-import { Ui } from '@iotsphere/ui';
+import { Button } from '@iotsphere/ui-lib/components/ui/button';
+
 export function App() {
   return (
     <div>
-      <Ui />
+      <Button />
     </div>
   );
 }
