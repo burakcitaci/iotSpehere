@@ -10,7 +10,7 @@
       "path": "./apps/frontend/dashboard"
     },
     {
-      "path": "./apps/frontend/library"
+      "path": "./apps/frontend/ui-lib"
     }
   ]
 }

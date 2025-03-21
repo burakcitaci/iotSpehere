@@ -2,6 +2,7 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
+import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig(() => ({
   root: __dirname,
@@ -14,7 +15,7 @@ export default defineConfig(() => ({
     port: 4300,
     host: 'localhost',
   },
-  plugins: [react()],
+  plugins: [react(), tailwindcss()],
   // Uncomment this if you are using workers.
   // worker: {
   //  plugins: [ nxViteTsPaths() ],
@@ -29,7 +30,7 @@ export default defineConfig(() => ({
   },
   resolve: {
     alias: {
-      '@iotsphere/ui-lib': path.resolve(__dirname, '../library/src/'),
+      '@': path.resolve(__dirname, './src'),
     },
   },
   test: {

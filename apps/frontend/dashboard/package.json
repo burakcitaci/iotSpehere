@@ -1,5 +1,8 @@
 {
   "name": "@iot-spehere/dashboard",
   "version": "0.0.1",
-  "private": true
+  "private": true,
+  "dependencies": {
+    "@radix-ui/react-slot": "^1.1.2"
+  }
 }
