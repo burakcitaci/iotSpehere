@@ -1,4 +1,4 @@
-import { Button } from '@/lib/components/ui/button';
+import { Button } from '@/components/ui/button';
 import {
   Card,
   CardContent,
@@ -6,9 +6,9 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from '@/lib/components/ui/card';
-import { Input } from '@/lib/components/ui/input';
-import { Label } from '@/lib/components/ui/label';
+} from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
 
 /**
  * App
