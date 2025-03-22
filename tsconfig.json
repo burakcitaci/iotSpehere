@@ -8,9 +8,6 @@
     },
     {
       "path": "./apps/frontend/dashboard"
-    },
-    {
-      "path": "./apps/frontend/ui-lib"
     }
   ]
 }

@@ -15,10 +15,6 @@
     "noUnusedLocals": true,
     "skipLibCheck": true,
     "strict": true,
-    "target": "es2022",
-    "baseUrl": ".",
-    "paths": {
-      "@iotsphere/ui-lib/*": ["apps/frontend/library/src/*"]
-    }
+    "target": "es2022"
   }
 }
