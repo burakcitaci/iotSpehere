@@ -1,3 +1,8 @@
+import { AppSidebar } from '@/components/app-sidebar';
+import { ChartAreaInteractive } from '@/components/chart-area-interactive';
+import { DataTable } from '@/components/data-table';
+import { SectionCards } from '@/components/section-cards';
+import { SiteHeader } from '@/components/site-header';
 import { Button } from '@/components/ui/button';
 import {
   Card,
@@ -9,6 +14,8 @@ import {
 } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { SidebarInset, SidebarProvider } from '@/components/ui/sidebar';
+
 
 /**
  * App
@@ -21,35 +28,27 @@ import { Label } from '@/components/ui/label';
  *
  * @returns The app component.
  */
+
+import data from "./data.json"
 export function App() {
   return (
-    <div className="flex justify-center items-center h-screen">
-      <Card>
-        <CardHeader>
-          <CardTitle>Create project</CardTitle>
-          <CardDescription>
-            Deploy your new project in one-click.
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <form>
-            <div className="grid w-full items-center gap-4">
-              <div className="flex flex-col space-y-1.5">
-                <Label htmlFor="name">Name</Label>
-                <Input id="name" placeholder="Name of your project" />
-              </div>
-              <div className="flex flex-col space-y-1.5">
-                <Label>Hello World</Label>
-              </div>
+    <SidebarProvider>
+    <AppSidebar variant="inset" />
+    <SidebarInset>
+      <SiteHeader />
+      <div className="flex flex-1 flex-col">
+        <div className="@container/main flex flex-1 flex-col gap-2">
+          <div className="flex flex-col gap-4 py-4 md:gap-6 md:py-6">
+            <SectionCards />
+            <div className="px-4 lg:px-6">
+              <ChartAreaInteractive />
             </div>
-          </form>
-        </CardContent>
-        <CardFooter className="flex justify-between">
-          <Button variant="outline">Cancel</Button>
-          <Button>Deploy</Button>
-        </CardFooter>
-      </Card>
-    </div>
+            <DataTable data={data} />
+          </div>
+        </div>
+      </div>
+    </SidebarInset>
+  </SidebarProvider>
   );
 }
 
