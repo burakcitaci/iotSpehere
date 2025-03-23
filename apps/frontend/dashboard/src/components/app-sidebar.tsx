@@ -5,10 +5,7 @@ import {
   ArrowUpCircleIcon,
   BarChartIcon,
   CameraIcon,
-  ClipboardListIcon,
-  DatabaseIcon,
   FileCodeIcon,
-  FileIcon,
   FileTextIcon,
   FolderIcon,
   HelpCircleIcon,
@@ -19,7 +16,6 @@ import {
   UsersIcon,
 } from 'lucide-react';
 
-import { NavDocuments } from '@/components/nav-documents';
 import { NavMain } from '@/components/nav-main';
 import { NavSecondary } from '@/components/nav-secondary';
 import { NavUser } from '@/components/nav-user';
@@ -143,7 +139,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
               asChild
               className="data-[slot=sidebar-menu-button]:!p-1.5"
             >
-              <a href="#">
+              <a href="/">
                 <ArrowUpCircleIcon className="h-5 w-5" />
                 <span className="text-base font-semibold">Acme Inc.</span>
               </a>
