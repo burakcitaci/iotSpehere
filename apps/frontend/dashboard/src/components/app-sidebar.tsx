@@ -35,12 +35,12 @@ const data = {
   navMain: [
     {
       title: 'Dashboard',
-      url: '#',
+      url: '/',
       icon: LayoutDashboardIcon,
     },
     {
       title: 'Analytics',
-      url: '#',
+      url: '/analytics',
       icon: BarChartIcon,
     },
     {

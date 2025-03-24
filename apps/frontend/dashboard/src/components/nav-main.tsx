@@ -7,6 +7,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from '@/components/ui/sidebar';
+import { Link, useLocation } from 'react-router-dom';
 
 export function NavMain({
   items,
@@ -17,17 +18,22 @@ export function NavMain({
     icon?: LucideIcon;
   }[];
 }>) {
+  const location = useLocation();
+
   return (
     <SidebarGroup>
       <SidebarGroupContent className="flex flex-col gap-2">
         <SidebarMenu>
           {items.map((item) => (
-            <SidebarMenuItem key={item.title}>
-              <SidebarMenuButton tooltip={item.title}>
+            <Link to={item.url} title={item.title} key={item.title}>
+              <SidebarMenuButton
+                tooltip={item.title}
+                isActive={location.pathname === item.url}
+              >
                 {item.icon && <item.icon />}
-                <span>{item.title}</span>
+                {item.title}
               </SidebarMenuButton>
-            </SidebarMenuItem>
+            </Link>
           ))}
         </SidebarMenu>
       </SidebarGroupContent>
