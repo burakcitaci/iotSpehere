@@ -1,16 +1,13 @@
-'use client';
-
 import * as React from 'react';
 import {
-  ArrowUpCircleIcon,
   BarChartIcon,
+  BoxesIcon,
   CameraIcon,
   FileCodeIcon,
   FileTextIcon,
   FolderIcon,
   HelpCircleIcon,
   LayoutDashboardIcon,
-  ListIcon,
   SearchIcon,
   SettingsIcon,
   UsersIcon,
@@ -40,11 +37,6 @@ const data = {
       title: 'Dashboard',
       url: '#',
       icon: LayoutDashboardIcon,
-    },
-    {
-      title: 'Lifecycle',
-      url: '#',
-      icon: ListIcon,
     },
     {
       title: 'Analytics',
@@ -140,8 +132,8 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
               className="data-[slot=sidebar-menu-button]:!p-1.5"
             >
               <a href="/">
-                <ArrowUpCircleIcon className="h-5 w-5" />
-                <span className="text-base font-semibold">Acme Inc.</span>
+                <BoxesIcon className="h-5 w-5" />
+                <span className="text-base font-semibold">IOT Sphere</span>
               </a>
             </SidebarMenuButton>
           </SidebarMenuItem>
