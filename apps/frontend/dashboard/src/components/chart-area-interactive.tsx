@@ -23,21 +23,22 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group';
+
 const generatePastMonthChartData = () => {
   const chartData = [];
   const today = new Date();
 
-  // Helper function to generate realistic-looking data values
+  // Helper function to generate realistic IoT hub connection data
   const generateDataPoint = (date: Date) => {
     // Create some variation based on day of week (weekends have different patterns)
     const dayOfWeek = date.getDay();
     const isWeekend = dayOfWeek === 0 || dayOfWeek === 6;
 
     // Base values with some randomness
-    const baseEnergy = isWeekend
-      ? 15 + Math.random() * 10
-      : 20 + Math.random() * 15;
-    const basePower = isWeekend
+    const baseConnectedDevices = isWeekend
+      ? 15 + Math.round(Math.random() * 10)
+      : 20 + Math.round(Math.random() * 15);
+    const baseDataTransferred = isWeekend
       ? 12 + Math.random() * 12
       : 18 + Math.random() * 20;
 
@@ -47,8 +48,10 @@ const generatePastMonthChartData = () => {
 
     return {
       date: date.toISOString().split('T')[0], // Format as YYYY-MM-DD
-      energyConsumption: Number((baseEnergy + periodicFactor).toFixed(1)),
-      powerOutput: Number((basePower + periodicFactor * 0.8).toFixed(1)),
+      connectedDevices: Math.round(baseConnectedDevices + periodicFactor),
+      dataTransferred: Number(
+        (baseDataTransferred + periodicFactor * 0.8).toFixed(1)
+      ),
     };
   };
 
@@ -61,15 +64,16 @@ const generatePastMonthChartData = () => {
 
   return chartData;
 };
+
 const chartData = generatePastMonthChartData();
 
 const chartConfig = {
-  energyConsumption: {
-    label: 'Energy Consumption (kWh)',
+  connectedDevices: {
+    label: 'Connected Devices',
     color: 'var(--chart-1)',
   },
-  powerOutput: {
-    label: 'Power Output (kW)',
+  dataTransferred: {
+    label: 'Data Transferred (MB)',
     color: 'var(--chart-2)',
   },
 } satisfies ChartConfig;
@@ -101,7 +105,7 @@ export function ChartAreaInteractive() {
   return (
     <Card className="@container/card">
       <CardHeader className="relative">
-        <CardTitle>Total Performance Values</CardTitle>
+        <CardTitle>IoT Hub Performance</CardTitle>
         <CardDescription>
           <span className="@[540px]/card:block hidden">
             {timeRange === '90d' && 'Total for the last 3 months'}
@@ -163,24 +167,24 @@ export function ChartAreaInteractive() {
               <linearGradient id="fillDesktop" x1="0" y1="0" x2="0" y2="1">
                 <stop
                   offset="5%"
-                  stopColor={chartConfig.powerOutput.color}
+                  stopColor={chartConfig.dataTransferred.color}
                   stopOpacity={1.0}
                 />
                 <stop
                   offset="95%"
-                  stopColor={chartConfig.powerOutput.color}
+                  stopColor={chartConfig.dataTransferred.color}
                   stopOpacity={0.1}
                 />
               </linearGradient>
               <linearGradient id="fillMobile" x1="0" y1="0" x2="0" y2="1">
                 <stop
                   offset="5%"
-                  stopColor={chartConfig.energyConsumption.color}
+                  stopColor={chartConfig.connectedDevices.color}
                   stopOpacity={0.8}
                 />
                 <stop
                   offset="95%"
-                  stopColor={chartConfig.energyConsumption.color}
+                  stopColor={chartConfig.connectedDevices.color}
                   stopOpacity={0.1}
                 />
               </linearGradient>
@@ -215,17 +219,17 @@ export function ChartAreaInteractive() {
               }
             />
             <Area
-              dataKey="energyConsumption"
+              dataKey="connectedDevices"
               type="natural"
               fill="url(#fillMobile)"
-              stroke={chartConfig.energyConsumption.color}
+              stroke={chartConfig.connectedDevices.color}
               stackId="a"
             />
             <Area
-              dataKey="powerOutput"
+              dataKey="dataTransferred"
               type="natural"
               fill="url(#fillDesktop)"
-              stroke={chartConfig.powerOutput.color}
+              stroke={chartConfig.dataTransferred.color}
               stackId="a"
             />
           </AreaChart>
