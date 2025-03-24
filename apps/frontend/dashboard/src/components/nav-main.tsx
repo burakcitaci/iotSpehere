@@ -26,13 +26,15 @@ export function NavMain({
         <SidebarMenu>
           {items.map((item) => (
             <Link to={item.url} title={item.title} key={item.title}>
-              <SidebarMenuButton
-                tooltip={item.title}
-                isActive={location.pathname === item.url}
-              >
-                {item.icon && <item.icon />}
-                {item.title}
-              </SidebarMenuButton>
+              <SidebarMenuItem key={item.title}>
+                <SidebarMenuButton
+                  tooltip={item.title}
+                  isActive={location.pathname === item.url}
+                >
+                  {item.icon && <item.icon />}
+                  <span>{item.title}</span>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
             </Link>
           ))}
         </SidebarMenu>
