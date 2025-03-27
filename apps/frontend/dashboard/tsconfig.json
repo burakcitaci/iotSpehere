@@ -9,7 +9,7 @@
   "include": [],
   "references": [
     {
-      "path": "../../../shared/entity-lib"
+      "path": "../../../shared/ui-lib"
     },
     {
       "path": "./tsconfig.app.json"

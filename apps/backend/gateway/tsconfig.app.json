@@ -9,6 +9,10 @@
     "emitDecoratorMetadata": true,
     "target": "es2021"
   },
+  "baseUrl": ".",
+  "paths": {
+    "@/*": ["./src/*"]
+  },
   "include": ["src/**/*.ts"],
   "exclude": [
     "out-tsc",

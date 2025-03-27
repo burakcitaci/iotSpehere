@@ -43,22 +43,22 @@ import {
 } from 'lucide-react';
 import { z } from 'zod';
 
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
+import { Badge } from './ui/badge';
+import { Button } from './ui/button';
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
   DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
-import { Label } from '@/components/ui/label';
+} from './ui/dropdown-menu';
+import { Label } from './ui/label';
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@/components/ui/select';
+} from './ui/select';
 import {
   Table,
   TableBody,
@@ -66,8 +66,8 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from '@/components/ui/table';
-import { Tabs, TabsContent } from '@/components/ui/tabs';
+} from './ui/table';
+import { Tabs, TabsContent } from './ui/tabs';
 
 export const schema = z.object({
   id: z.number(),

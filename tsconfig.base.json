@@ -19,7 +19,8 @@
     "baseUrl": ".",
     "rootDir": ".",
     "paths": {
-      "@iot-sphere/entity-lib": ["shared/entity-lib/src/index.ts"]
+      "@iot-sphere/entity-lib": ["shared/entity-lib/src/index.ts"],
+      "@iot-sphere/ui-lib/*": ["shared/ui-lib/src/index.ts"]
     }
   }
 }

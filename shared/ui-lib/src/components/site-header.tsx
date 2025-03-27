@@ -1,5 +1,5 @@
-import { Separator } from '@/components/ui/separator';
-import { SidebarTrigger } from '@/components/ui/sidebar';
+import { Separator } from './ui/separator';
+import { SidebarTrigger } from './ui/sidebar';
 import { entityLib } from '@iot-sphere/entity-lib';
 export function SiteHeader() {
   return (
