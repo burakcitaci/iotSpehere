@@ -18,4 +18,9 @@ export class AppController {
     Logger.log('Getting data...');
     return this.appService.getData();
   }
+
+  @Get('span/:spanId')
+  getSpanById(spanId: string) {
+    return this.appService.getSpanById(spanId);
+  }
 }

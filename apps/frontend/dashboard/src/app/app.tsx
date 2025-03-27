@@ -18,7 +18,7 @@ import { SiteHeader } from '@/components/site-header';
 import { ChartAreaInteractive } from '@/components/chart-area-interactive';
 import { DataTable } from '@/components/data-table';
 
-export function App({ ...props }) {
+export function App() {
   return (
     <SidebarProvider>
       <AppSidebar variant="inset" />

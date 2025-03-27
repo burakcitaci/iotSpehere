@@ -30,7 +30,7 @@ import { ClientRequest, IncomingMessage, ServerResponse } from 'http';
  * 5. Listens on the specified port.
  * 6. Logs a message to the console indicating the application is running.
  */
-/******  91b51717-d546-499d-b448-d715f0a013ea  *******/async function bootstrap() {
+/******  91b51717-d546-499d-b448-d715f0a013ea  *******/ async function bootstrap() {
   initializeTracing();
   const appWithLogger = await NestFactory.create(AppModule, {
     logger: new OtelLogger(createLoggerProvider().getLogger('gateway-api')),
@@ -38,7 +38,9 @@ import { ClientRequest, IncomingMessage, ServerResponse } from 'http';
 
   const globalPrefix = 'api';
   appWithLogger.setGlobalPrefix(globalPrefix);
-  const port = process.env.PORT ?? 3010;
+
+  appWithLogger.enableCors();
+  const port = process.env.PORT ?? 3001;
   await appWithLogger.listen(port);
 
   Logger.log(
