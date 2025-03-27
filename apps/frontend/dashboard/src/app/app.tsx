@@ -10,16 +10,13 @@
  * @returns The app component.
  */
 
-import {
-  AppSidebar,
-  ChartAreaInteractive,
-  DataTable,
-  SidebarInset,
-  SidebarProvider,
-  SiteHeader,
-} from '@iot-sphere/ui-lib';
+import { SidebarInset, SidebarProvider } from '@/components/ui/sidebar';
 import data from './data.json';
 import { SectionCards } from '@/components/section-cards';
+import { AppSidebar } from '@/components/app-sidebar';
+import { SiteHeader } from '@/components/site-header';
+import { ChartAreaInteractive } from '@/components/chart-area-interactive';
+import { DataTable } from '@/components/data-table';
 
 export function App({ ...props }) {
   return (

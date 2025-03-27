@@ -11,9 +11,6 @@
     },
     {
       "path": "./shared/entity-lib"
-    },
-    {
-      "path": "./shared/ui-lib"
     }
   ]
 }
